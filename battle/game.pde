@@ -16,6 +16,12 @@ void game() {
       i++;
     }
   }
+  
+  player1.act();
+  player1.show();
+  
+  
+  
 }
 
 

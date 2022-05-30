@@ -11,14 +11,19 @@ final int GAME2 = 6;
 boolean up, down, left, right, space;
 
 ArrayList <Star> star;
+
+StarFighter player1;
+
 int n = 100;
 
 
 void setup() {
   size(800, 800, P2D);
   mode = INTRO;
-
   star = new ArrayList<Star>();
+  player1 = new StarFighter();
+  
+  rectMode(CENTER);
 }
 
 

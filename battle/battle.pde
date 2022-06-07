@@ -1,5 +1,5 @@
-
-
+ArrayList <GameObject> objects;
+ArrayList <Star> stars;
 int mode;
 final int INTRO = 1;
 final int GAME = 2;
@@ -10,20 +10,32 @@ final int GAME2 = 6;
 
 boolean up, down, left, right, space;
 
-ArrayList <Star> star;
-
 StarFighter player1;
 
+Enemy enemies;
+
 int n = 100;
+
+PImage ship;
+PImage bullet;
 
 
 void setup() {
   size(800, 800, P2D);
   mode = INTRO;
-  star = new ArrayList<Star>();
+  
+  objects = new ArrayList<GameObject>();
+  stars = new ArrayList<Star>();
   player1 = new StarFighter();
+  enemies = new Enemy();
   
   rectMode(CENTER);
+  
+  imageMode(CENTER);
+  
+  ship = loadImage("ship.png");
+  
+  bullet = loadImage("bullet.png");
 }
 
 

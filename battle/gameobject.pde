@@ -1,16 +1,21 @@
-class GameObject{
-  
+class GameObject {
+
   float x, y, vx, vy, size;
+  int lives;
   color c;
-  
-  
-  
-  
-  
-  GameObject(){
-  
-  
-  
+
+
+
+
+
+  GameObject() {
   }
 
+  void show() {
+  }
+
+  void act() {
+    x = x + vx;
+    y = y + vy;
+  }
 }

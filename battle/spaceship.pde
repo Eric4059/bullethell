@@ -1,7 +1,7 @@
 class StarFighter extends GameObject{
   float x, y, size;
   float vx, vy;
-  int lives;
+  int lives, counter;
   
   
   
@@ -23,17 +23,29 @@ class StarFighter extends GameObject{
   //behaviour functions
   
   void act(){
+     
+     super.act();
+     
+     counter++;
     
-     if(up) vy = -2;
-     if(down) vy = 2;
-     if(left) vx = -2;
-     if(right) vx = 2;
+     if(up) vy = -5;
+     if(down) vy = 5;
+     if(left) vx = -5;
+     if(right) vx = 5;
+     if(space && counter%8 == 0) {
      
-     if(x <= 20) x = 20;
-     if(x >= 780) x = 780;
-     if(y <= 20) y = 20;
-     if(y >= 780) y = 780;
+       objects.add(new Bullet());
+       //counter = 0;
+       
+     }
      
+     if(x <= 30) x = 30;
+     if(x >= 770) x = 770;
+     if(y <= 30) y = 30;
+     if(y >= 770) y = 770;
+     
+     vx = vx*0.9;
+     vy = vy*0.9;
      
      
      
@@ -47,7 +59,7 @@ class StarFighter extends GameObject{
   
   void show(){
      fill(255);
-     rect(x, y, 40, 40);
+     image(ship, x, y, 60, 60);
   
   }
   

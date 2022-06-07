@@ -13,12 +13,11 @@ class Star {
     lives = 1;
     size = random(1, 5);
     vy = size/1.4;
-    
+
     hue = random(0, 255);
     hue2 = random(0, 255);
     //hue = hue2 = 0;
     hue3 = random(0, 255);
-    
   }
 
   void act() {

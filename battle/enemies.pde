@@ -1,43 +1,44 @@
-class Enemy extends GameObject{
-  float x, y, size;
-  float vx, vy;
-  int lives;
+class Enemy extends GameObject {
 
-  Enemy(){
-  
-    x = random(0, width);
+  Enemy() {
+    x = random(20, width - 20);
     size = random(40, 60);
     y = 0;
-    vy = 4;
+    vy = 3;
     lives = 3;
-    
-    
-    
-  
   }
-  
-  
-  
-  void act(){
-   
+
+
+
+  void act() {
+
     super.act();
+    //if (y > height) {
+    //  lives = 0;
+    //}
+    int i = 0;
+    while (i < objects.size()){
+      if(objects.get(i) instanceof Bullet){
+        if(collidingWith(objects.get(i))){
+           lives --;
+        }
+      
+      } 
+    i++;
+    }
     
-    y += vy;
+    
+    //shoot
+    objects.add(new EnemyBullet());
     
     
-  
-  
   }
-  
-  
-  void show(){
-    
-    
+
+
+  void show() {
+
+
     fill(255);
-    square(x, y, size);
-    
-  
+    image(enemy, x, y, size, size);
   }
-
-
 }

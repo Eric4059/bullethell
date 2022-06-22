@@ -3,7 +3,7 @@ void intro() {
 
   fill(0);
   textSize(100);
-  text("BREAKOUT", 400, 200);
+  text("BIRD KILLER", 400, 200);
   
   
   //start
@@ -12,7 +12,7 @@ void intro() {
   rect(400, 535, 200, 80);
   fill(0);
   textSize(50);
-  text("Start", 400, 535);
+  text("Start", 400, 528);
   
   
   

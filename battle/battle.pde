@@ -22,26 +22,31 @@ color red = #FC271C;
 
 StarFighter player1;
 
-Enemy enemies;
-
+Enemy1 enemies;
+Enemy2 enemies2;
+int score;
+int live;
 int n = 100;
 
 PImage ship;
 PImage bullet;
 PImage enemy;
+PImage laser;
 
 
 void setup() {
   size(800, 800, P2D);
   mode = INTRO;
-  
+  live = 5;
+  strokeWeight(5);
   textAlign(CENTER, CENTER);
   rectMode(CENTER);
   
   objects = new ArrayList<GameObject>();
   stars = new ArrayList<Star>();
   player1 = new StarFighter();
-  enemies = new Enemy();
+  enemies = new Enemy1();
+  enemies2 = new Enemy2();
   rectMode(CENTER);
   
   imageMode(CENTER);
@@ -51,6 +56,8 @@ void setup() {
   bullet = loadImage("bullet.png");
   
   enemy = loadImage("enemy.png");
+  
+  laser = loadImage("laser.png");
   
   
 }

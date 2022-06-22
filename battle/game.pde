@@ -3,7 +3,8 @@ void game() {
   stars.add(new Star());
   player1.act();
   player1.show();
-  if (frameCount%20 == 0) objects.add(new Enemy());
+  if (frameCount%55 == 0) objects.add(new Enemy1());
+  if(frameCount%55 == 0) objects.add(new Enemy2());
 
   for (int i = 0; i < stars.size(); i++) {
     Star s = stars.get(i);
@@ -24,6 +25,14 @@ void game() {
       objects.remove(i);
     } 
   }
+  
+  //score
+  text("Score: " + score, 200, 600);
+  text("Lives: " + live, 600, 600);
+  
+  
+  
+  
 }
 
 
